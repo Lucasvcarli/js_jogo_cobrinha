@@ -84,6 +84,7 @@ function iniciarJogo(){
         x: snakeX,
         y:snakeY
     }
-    snake.unshift(newHead); // método unshift adicionacomo primeiro quadradinho da cobrinha
-    
+
+    // método unshift adicionacomo primeiro quadradinho da cobrinha
+    snake.unshift(newHead);
 }
