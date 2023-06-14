@@ -116,9 +116,11 @@ function iniciarJogo(){
     
         document.getElementById('fase').innerText = fase;
         document.getElementById('velocidade').innerText = time;
+
     
         console.log('fase: ' + fase);
         console.log('Pontos para proxima fase: ' + pontosProximaFase);
+
     }
 }
 
