@@ -99,6 +99,34 @@ function iniciarJogo(){
 
     // método unshift adicionacomo primeiro quadradinho da cobrinha
     snake.unshift(newHead);
+
+    if (pontos != snake.length-1) {
+        pontos++;
+        document.getElementById('pontuacao').innerText = pontos;
+    }
+
+    if (pontos == pontosProximaFase) {
+        fase++;
+        pontosProximaFase = pontosProximaFase + pontosPorFase;
+    
+        time = time - ( pontosPorFase * 10);
+    
+        clearInterval(jogo);
+        jogo = setInterval(iniciarJogo, time);
+    
+        document.getElementById('fase').innerText = fase;
+        document.getElementById('velocidade').innerText = time;
+    
+        console.log('fase: ' + fase);
+        console.log('Pontos para proxima fase: ' + pontosProximaFase);
+    }
 }
 
-let jogo = setInterval(iniciarJogo, 100);
+
+let time = 200;
+let jogo = setInterval(iniciarJogo, time);
+
+let pontos = 0;
+let pontosPorFase = 2;
+let pontosProximaFase = pontosPorFase;
+let fase = 1;
